@@ -19,8 +19,9 @@ const getIngredients = ingredients.map((element) => {
   ingredientsUl.append(headEl);
   headEl.textContent = element;
   headEl.classList.add("item")
+  
 });
-console.log(getIngredients)
+
 
 
 // console.log(document.getElementById(`ingredients`))
