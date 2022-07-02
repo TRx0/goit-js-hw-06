@@ -13,13 +13,21 @@ const images = [
   },
 ];
 const gallery = document.querySelector(".gallery");
+const item = document.createElement(`li`);
 
-const imgGallery = images.map(img => {
-  const elemImg = document.createElement('img');
-  const imgEl = document.createElement('li');
-  elemImg.src = img.url;  
-  elemImg.alt = img.alt;
-  imgEl.append(elemImg);
-    return imgEl;
-});
-gallery.append(...imgGallery);
+const createGallery = images.map(({url, alt}) => `<li><img alt = ${alt} src = ${url} width = 600px> </li>`).join(``);
+gallery.insertAdjacentHTML("beforeend", createGallery);
+
+
+
+
+
+// const imgGallery = images.map(img => {
+//   const elemImg = document.createElement('img');
+//   const imgEl = document.createElement('li');
+//   elemImg.src = img.url;  
+//   elemImg.alt = img.alt;
+//   imgEl.append(elemImg);
+//     return imgEl;
+// });
+// gallery.append(...imgGallery);
